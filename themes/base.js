@@ -124,7 +124,7 @@ BaseTheme.DEFAULTS = extend(true, {}, Theme.DEFAULTS, {
           if (fileInput == null) {
             fileInput = document.createElement('input');
             fileInput.setAttribute('type', 'file');
-            fileInput.setAttribute('accept', 'image/png, image/gif, image/jpeg, image/bmp, image/x-icon, image/svg+xml');
+            fileInput.setAttribute('accept', 'image/png, image/gif, image/jpeg, image/bmp, image/x-icon');
             fileInput.classList.add('ql-image');
             fileInput.addEventListener('change', () => {
               if (fileInput.files != null && fileInput.files[0] != null) {
@@ -227,8 +227,8 @@ class BaseTooltip extends Tooltip {
       case 'formula': {
         if (!value) break;
         let range = this.quill.getSelection(true);
-        let index = range.index + range.length;
         if (range != null) {
+          let index = range.index + range.length;
           this.quill.insertEmbed(index, this.root.getAttribute('data-mode'), value, Emitter.sources.USER);
           if (this.root.getAttribute('data-mode') === 'formula') {
             this.quill.insertText(index + 1, ' ', Emitter.sources.USER);
