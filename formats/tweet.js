@@ -14,6 +14,7 @@ class Tweet extends BlockEmbed {
       node.insertAdjacentHTML('beforeend', ' (Aquí se desplegará)]');
       node.setAttribute('style', 'text-align:center;');
     } else {
+      // eslint-disable-next-line
       twttr.widgets.createTweet(id, node, {
         align: 'center',
         lang: 'es',
