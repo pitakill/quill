@@ -23,6 +23,7 @@ const CLIPBOARD_CONFIG = [
   ['br', matchBreak],
   [Node.ELEMENT_NODE, matchNewline],
   [Node.ELEMENT_NODE, matchBlot],
+  [Node.ELEMENT_NODE, matchVideoContainer],
   [Node.ELEMENT_NODE, matchSpacing],
   [Node.ELEMENT_NODE, matchAttributor],
   [Node.ELEMENT_NODE, matchStyles],
@@ -244,6 +245,22 @@ function matchBlot(node, delta) {
   } else if (typeof match.formats === 'function') {
     delta = applyFormat(delta, match.blotName, match.formats(node));
   }
+  return delta;
+}
+
+function matchVideoContainer(node, delta) {
+  let match = Parchment.query(node);
+  if (match == null) return delta;
+  if (match.className === 'ql-video-container') {
+    // Accept Video Container
+    var embed = {};
+    if (node.childNodes && node.childNodes[0] && node.childNodes[0].src) {
+      var value = node.childNodes[0].src;
+      embed[match.blotName] = value;
+      delta = new Delta().insert(embed, value);
+    }
+  }
+
   return delta;
 }
 
