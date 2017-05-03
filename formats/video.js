@@ -54,7 +54,7 @@ class Video extends BlockEmbed {
 }
 Video.blotName = 'video';
 Video.className = 'ql-video-container';
-Video.tagName = 'DIV';
+Video.tagName = 'P';
 
 
 export default Video;
