@@ -150,6 +150,9 @@ BaseTheme.DEFAULTS = extend(true, {}, Theme.DEFAULTS, {
         },
         video: function() {
           this.quill.theme.tooltip.edit('video');
+        },
+        'iframe-embed': function() {
+          this.quill.theme.tooltip.edit('iframe-embed');
         }
       }
     }
@@ -248,6 +251,15 @@ class BaseTooltip extends Tooltip {
           this.quill.insertEmbed(range.index + 1, 'tweet', value, Emitter.sources.USER);
           this.quill.setSelection(range.index + 2, Emitter.sources.SILENT);
         }
+        break;
+      }
+      case 'iframe-embed': {
+        const valueBoolean = Boolean(value);
+        if (!valueBoolean) break;
+        const range = this.quill.getSelection(true);
+        this.quill.insertText(range.index, '\n', Emitter.sources.USER);
+        this.quill.insertEmbed(range.index + 1, 'iframe-embed', value, Emitter.sources.USER);
+        this.quill.setSelection(range.index + 2, Emitter.sources.SILENT);
         break;
       }
       default:

@@ -119,7 +119,8 @@ CucoTooltip.TEMPLATE = [
   'data-formula="e=mc^2" ',
   'data-link="http://culturacolectiva.com" ',
   'data-video="Link" ',
-  'data-tweet="Tweet">',
+  'data-tweet="Tweet"',
+  'data-iframe-embed="IframeEmbed">',
   '<a class="ql-action"></a>',
   '<a class="ql-remove"></a>'
 ].join('');

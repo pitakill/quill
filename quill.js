@@ -23,6 +23,7 @@ import Underline from './formats/underline';
 import Image from './formats/image';
 import Video from './formats/video';
 import Tweet from './formats/tweet';
+import IframeEmbed from './formats/iframe-embed';
 
 import CodeBlock, { Code as InlineCode } from './formats/code';
 
@@ -85,6 +86,7 @@ Quill.register({
   'formats/image': Image,
   'formats/video': Video,
   'formats/tweet': Tweet,
+  'formats/iframe-embed': IframeEmbed,
 
   'formats/list/item': ListItem,
 
