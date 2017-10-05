@@ -47,5 +47,6 @@ module.exports = {
   'underline' : require('../assets/icons/underline.svg'),
   'video'     : require('../assets/icons/video.svg'),
   'tweet'     : require('../assets/icons/tweet.svg'),
-  'iframe-embed'     : require('../assets/icons/code.svg')
+  'iframe-embed': require('../assets/icons/code.svg'),
+  'instagram' : require('../assets/icons/instagram.svg'),
 };

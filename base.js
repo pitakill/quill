@@ -257,18 +257,10 @@ class BaseTooltip extends Tooltip {
         break;
       }
       case 'instagram': {
-        const valueBoolean = Boolean(value);
-        if(!valueBoolean) break;
-        const url = value.match(/(?:https?):\/\/(?:www\.)?instagram\.com\/p\/(\w+)\/?/);
-        if (url) {
-          const html = value.match(/^(?:<blockquote)(?:.*)(?:<\/blockquote>)/);
-          const newValue = [url[1], html[0]];
-          value = newValue;
-          const range = this.quill.getSelection(true);
-          this.quill.insertEmbed(range.index + 1, 'instagram', value, Emitter.sources.USER);
-          this.quill.setSelection(range.index + 2, Emitter.sources.SILENT);
-        }
-        break;
+        if(!Boolean(value)) break;
+        const range = this.quill.getSelection(true);
+        this.quill.insertEmbed(range.index + 1, 'instagram', value, Emitter.sources.USER);
+        this.quill.setSelection(range.index + 2, Emitter.sources.SILENT);
       }
       case 'iframe-embed': {
         const valueBoolean = Boolean(value);

@@ -117,9 +117,10 @@ CucoTooltip.TEMPLATE = [
   '<a class="ql-preview" target="_blank" href="about:blank"></a>',
   '<input type="text" ',
   'data-formula="e=mc^2" ',
-  'data-link="http://culturacolectiva.com" ',
+  'data-link="https://culturacolectiva.com" ',
   'data-video="Link" ',
   'data-tweet="Tweet"',
+  'data-instagram="<blockquote class=\'instagram-media\'..."',
   'data-iframe-embed="IframeEmbed">',
   '<a class="ql-action"></a>',
   '<a class="ql-remove"></a>'

@@ -24,6 +24,7 @@ import Image from './formats/image';
 import Video from './formats/video';
 import Tweet from './formats/tweet';
 import IframeEmbed from './formats/iframe-embed';
+import Instagram from './formats/instagram';
 
 import CodeBlock, { Code as InlineCode } from './formats/code';
 
@@ -87,6 +88,7 @@ Quill.register({
   'formats/video': Video,
   'formats/tweet': Tweet,
   'formats/iframe-embed': IframeEmbed,
+  'formats/instagram': Instagram,
 
   'formats/list/item': ListItem,
 
